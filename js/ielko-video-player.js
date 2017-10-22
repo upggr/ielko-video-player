@@ -8,6 +8,9 @@ function playmedia(type, url) {
       thetype = 'video/youtube';
       techordernode = '"techOrder": ["youtube"],';
       break;
+      case 'rtmp':
+        thetype = 'application/x-mpegurl';
+        break;
   }
 
   $(".upgvid").empty().append(
