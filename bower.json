@@ -16,25 +16,23 @@
     "tests",
     "source",
     "src",
-        "spec",
-        ".bowerrc",
-        ".gitignore",
-        ".jshintignore",
-        ".jshintrc",
-        "bower.json",
-        "gruntfile.js",
-        "package.json",
-        "README.md"
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
-    "video.js": "^6.3.3",
-    "videojs-contrib-hls": "^5.12.0"
+    "jquery-dist": "^2.1.3"
   },
-  "install" : {
-        "path"  : {
-            "js": "js/",
-            "css": "css/"
-        }
+  "install": {
+    "path": {
+      "js": "js/",
+      "css": "css/"
     }
+  }
 }

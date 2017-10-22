@@ -1,0 +1,19 @@
+{
+  "name": "sf2",
+  "version": "2.0.0",
+  "main": "src/main/app.js",
+  "dependencies": {
+    "jquery-ui": "latest"
+  },
+  "install": {
+    "path": "build/src",
+    "sources": {
+      "jquery-ui": {
+        "mapping": [
+          {"bower_components/jquery-ui/themes/base/**": "base"},
+          {"bower_components/jquery-ui/jquery-ui.min.js": "jquery-ui.min.js"}
+        ]
+      }
+    }
+  }
+}
