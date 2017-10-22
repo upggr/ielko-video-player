@@ -7,11 +7,11 @@ function playmedia(type, url) {
         class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" \
         controls \
         autoplay \
-        data-setup={ \
+        data-setup=\'{ \
         "sources": [{ \
         "type":"application/x-mpegurl", \
         "src":"' + url + '" \
-        }]}  > \
+      }]}\' > \
         </video></div> \
         ');
       break;
@@ -32,9 +32,3 @@ function playmedia(type, url) {
       break;
   }
 }
-
-
-
-
-
-
