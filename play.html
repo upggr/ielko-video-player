@@ -97,13 +97,14 @@
       if (play) {
         if (play.indexOf('m3u8') > -1) {
           console.log('m3u8');
-          append_m3u8(play);
+          playmedia('m3u8',play)
+      //    append_m3u8(play);
         } else if (play.indexOf('rtmp') > -1) {
           console.log('rtmp');
           append_rtmp(play);
         } else if (play.indexOf('youtube') > -1) {
           console.log('youtube');
-          append_youtube(play);
+          playmedia('youtube',play)
         } else if (play.indexOf('livestream.com') > -1) {
           console.log('livestream.com');
           append_livestream(play);
