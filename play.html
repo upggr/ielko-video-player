@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 
   <!-- CSS -->
-  <link rel='stylesheet' href='css/ielko.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='css/ielko-video-player.css' type='text/css' media='all' />
   <link rel='stylesheet' id='videojs-css' href='css/video-js.min.css' type='text/css' media='all' />
   <link rel='stylesheet' id='videojs-airplay-css' href='css/videojs.airplay.css' type='text/css' media='all' />
   <!-- CSS -->
@@ -22,6 +22,7 @@
   <script type='text/javascript' src='js/videojs.airplay.js'></script>
   <script type='text/javascript' src='js/videojs-ie8.min.js'></script>
   <script type='text/javascript' src='js/Youtube.min.js'></script>
+  <script type='text/javascript' src='js/ielko-video-player.js'></script>
   <!-- JS -->
   <!-- ADS
   <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
@@ -138,15 +139,15 @@
         //    $(".upgvid").empty().append('<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="' + play + '&autoplay=1" frameborder="0" allowfullscreen></iframe></div></div>')
         $(".upgvid").empty().append(
           '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background">' +
-          '<video'+
-          'id="upgvideoplayer"'+
-           'class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls autoplay '+
-           'data-setup="{'+
-            '"techOrder": ["youtube"],'+
-            '"sources": [{'+
-            '"type": "video/youtube",'+
-            '"src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"'+
-            '}]}>'+
+          '<video' +
+          'id="upgvideoplayer"' +
+          'class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls autoplay ' +
+          'data-setup="{' +
+          '"techOrder": ["youtube"],' +
+          '"sources": [{' +
+          '"type": "video/youtube",' +
+          '"src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"' +
+          '}]}>' +
           '</video></div>'
         );
       }
