@@ -25,20 +25,4 @@ function playmedia(type, url) {
     </video></div> \
     ');
 
-  console.log(
-    '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"> \
-      <video id="upgvideoplayer" \
-      class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" \
-      controls \
-      autoplay \
-      data-setup=\'{ \
-      "sources": [{ \
-  ' + techordernode + ' \
-      "type":"' + thetype + '", \
-      "src":"' + url + '" \
-    }]}\' > \
-      </video></div> \
-      '
-
-  )
 }
