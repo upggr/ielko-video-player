@@ -10,7 +10,7 @@ function playmedia(type, url) {
         data-setup="{ \
         "sources": [{ \
         "type":"application/x-mpegurl", \
-        "src":' + url + '" \
+        "src":"' + url + '" \
         }]}"  > \
         </video></div> \
         ');
