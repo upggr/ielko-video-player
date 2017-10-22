@@ -8,8 +8,13 @@ function playmedia(type, url) {
         'controls ' +
         'preload="auto" ' +
         'autoplay ' +
-        'data-setup={"fluid":true,"plugins":{"airplayButton":{}}} playsinline >'+
-        '<source type="application/x-mpegurl" src="' + url + '">'+
+        'playsinline '+
+        'data-setup={'+
+          '"fluid":true, '+
+          '"plugins":{"airplayButton":{}}, '+
+          'type="application/x-mpegurl", '+
+          'src="' + url + '"'+
+        '}  >' +
         '</video></div>');
       break;
 
