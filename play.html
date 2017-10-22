@@ -91,30 +91,25 @@
     }
 
     $(document).ready(function() {
-      $(".upgads").css({
-        "position": "fixed",
-        "bottom": "0",
-        "margin": "0",
-        "text-align": "center",
-        "display": "inline-block",
-        "left": "50%",
-        "transform": "translate(-50%, 0)"
-      });
-
-
       var play = getUrlVars()["play"];
       if (play) {
         if (play.indexOf('m3u8') > -1) {
+          console.log('m3u8');
           append_m3u8(play);
         } else if (play.indexOf('rtmp') > -1) {
+          console.log('rtmp');
           append_rtmp(play);
         } else if (play.indexOf('youtube') > -1) {
+          console.log('youtube');
           append_youtube(play);
         } else if (play.indexOf('livestream.com') > -1) {
+          console.log('livestream.com');
           append_livestream(play);
         } else if (play.indexOf('dailymotion') > -1) {
+          console.log('dailymotion');
           append_dailymotion(play);
         } else if (play.indexOf('vimeo') > -1) {
+          console.log('vimeo');
           append_vimeo(play);
         }
       }
