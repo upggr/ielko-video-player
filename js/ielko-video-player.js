@@ -8,10 +8,9 @@ function playmedia(type, url) {
         controls \
         autoplay \
         data-setup="{ \
-        "plugins":{"airplayButton":{}}, \
         "sources": [{ \
-        type="application/x-mpegurl", \
-        src="' + url + '" \
+        "type="application/x-mpegurl", \
+        "src:"' + url + '" \
         }]}"  > \
         </video></div> \
         ');
@@ -33,3 +32,4 @@ function playmedia(type, url) {
       break;
   }
 }
+
