@@ -6,7 +6,7 @@ function playmedia(type, url) {
       break;
     case 'youtube':
       thetype = 'video/youtube';
-      techordernode = '"techOrder": ["youtube"]';
+      techordernode = '"techOrder": ["youtube"],';
       break;
   }
 
@@ -25,8 +25,8 @@ function playmedia(type, url) {
     </video></div> \
     ');
 
-    console.log(
-      '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"> \
+  console.log(
+    '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"> \
       <video id="upgvideoplayer" \
       class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" \
       controls \
@@ -39,6 +39,6 @@ function playmedia(type, url) {
     }]}\' > \
       </video></div> \
       '
-      
-    )
+
+  )
 }
