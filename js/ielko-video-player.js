@@ -9,7 +9,7 @@ function playmedia(type, url) {
         autoplay \
         data-setup="{ \
         "sources": [{ \
-        "type="application/x-mpegurl", \
+        "type:"application/x-mpegurl", \
         "src:"' + url + '" \
         }]}"  > \
         </video></div> \
@@ -32,4 +32,3 @@ function playmedia(type, url) {
       break;
   }
 }
-
