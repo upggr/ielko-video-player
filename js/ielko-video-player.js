@@ -17,8 +17,8 @@ function playmedia(type, url) {
     controls \
     autoplay \
     data-setup=\'{ \
+      ' + techordernode + ' \
     "sources": [{ \
-' + techordernode + ' \
     "type":"' + thetype + '", \
     "src":"' + url + '" \
   }]}\' > \
