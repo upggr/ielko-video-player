@@ -127,7 +127,7 @@
 
       function append_m3u8(play) {
         $(".upgvid").empty().append(
-          '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"techOrder": ["youtube"],"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="application/x-mpegurl" src="' +
+          '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="application/x-mpegurl" src="' +
           play + '"></video></div>');
       }
 
@@ -137,7 +137,7 @@
         play = play.replace("watch?v=", "v/");
         //    $(".upgvid").empty().append('<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="' + play + '&autoplay=1" frameborder="0" allowfullscreen></iframe></div></div>')
         $(".upgvid").empty().append(
-          '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="video/youtube" src="' +
+          '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"techOrder": ["youtube"],"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="video/youtube" src="' +
           play + '"></video></div>');
       }
 
