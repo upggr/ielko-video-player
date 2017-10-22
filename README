@@ -1,0 +1,5 @@
+Ielko video player (web)
+
+  Usage : play.html?play=X
+  Where X could be a youtube video, an m3u8 video and lot more!
+  
