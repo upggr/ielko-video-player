@@ -15,6 +15,7 @@
     "test",
     "tests",
     "source",
+    "src",
         "spec",
         ".bowerrc",
         ".gitignore",
