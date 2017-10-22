@@ -1,6 +1,0 @@
-components/*
-node_modules/*
-build/*
-test/*/bower_components
-test/*/build
-test/regExp/UFL.txt
