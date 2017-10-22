@@ -22,8 +22,8 @@
   },
   "install" : {
         "path"  : {
-            "js": "_js/",
-            "css": "_css/"
+            "js": "js/",
+            "css": "css/"
         }
     }
 }
