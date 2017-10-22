@@ -3,7 +3,7 @@ function playmedia(type, url) {
     case 'm3u8':
       $(".upgvid").empty().append(
         '<div id="videoHolder" style="background-image:url();" data-embed="true" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><video id="upgvideoplayer" poster="" class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered fullscreen-bg__video" controls preload="auto" autoplay data-setup={"fluid":true,"plugins":{"airplayButton":{}}} playsinline ><source type="application/x-mpegurl" src="' +
-        play + '"></video></div>');
+        url + '"></video></div>');
       break;
 
     case 'youtube':
@@ -20,5 +20,5 @@ function playmedia(type, url) {
         '}]}>' +
         '</video></div>');
       break;
-}
   }
+}
