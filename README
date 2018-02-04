@@ -1,5 +1,7 @@
-Ielko video player (web)
+A webplayer that will lock to a domain, using nimble and wmspanel.
 
-  Usage : play.html?play=X
-  Where X could be a youtube video, an m3u8 video and lot more!
-  
+Installation :
+
+1. Copy file to your server
+
+2. Modify password in config.php and in wms interface

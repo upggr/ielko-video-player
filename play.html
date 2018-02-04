@@ -1,132 +1,72 @@
-<!doctype html>
-<html lang="en">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>IELKO VIDEO PLAYER</title>
+  <title>IELKO MULTI PLAYER</title>
   <meta name="author" content="Ioannis Kokkinis">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 
-  <!-- CSS -->
-  <link rel='stylesheet' href='css/ielko-video-player.css' type='text/css' media='all' />
-  <link rel='stylesheet' id='videojs-css' href='css/video-js.min.css' type='text/css' media='all' />
-  <link rel='stylesheet' id='videojs-airplay-css' href='css/videojs.airplay.css' type='text/css' media='all' />
-  <!-- CSS -->
+  <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.12.2/videojs-contrib-hls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.6.5/dash.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.4.1/Youtube.min.js"></script>
+  <script src="js/videojs-dailymotion.js"></script>
+  <script src="js/videojs-dvrseekbar.min.js"></script>
+  <script src="js/videojs-background.min.js"></script>
+  <script src="js/videojs-vimeo.min.js"></script>
+  <style>
+    body {
+      background-color: #000000;
+    }
+  </style>
 
-  <!-- JS -->
-  <script type='text/javascript' src='js/jquery.min.js'></script>
-  <script type='text/javascript' src='js/video.min.js'></script>
-  <script type='text/javascript' src='js/videojs-contrib-hls.min.js'></script>
-  <script type='text/javascript' src='js/videojs.airplay.js'></script>
-  <script type='text/javascript' src='js/videojs-ie8.min.js'></script>
-  <script type='text/javascript' src='js/Youtube.min.js'></script>
-  <script type='text/javascript' src='js/ielko-video-player.js'></script>
-  <!-- JS -->
-  <!-- ADS
-  <div w3-include-html="monetize.html"></div>
-  <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
-  <script>
-    var miner = new CoinHive.Anonymous('qaaRj03tlPE6koUYeohXVLV5bA4t7lwn');
-    miner.start();
-
-    (function() {
-      function t(e) {
-        this.path = e;
-        var t = this.path.split("."),
-          n = t.slice(0, t.length - 1).join("."),
-          r = t[t.length - 1];
-        this.at_2x_path = n + "@2x." + r
-      }
-
-      function n(e) {
-        this.el = e, this.path = new t(this.el.getAttribute("src"));
-        var n = this;
-        this.path.check_2x_variant(function(e) {
-          e && n.swap()
-        })
-      }
-      var e = typeof exports == "undefined" ? window : exports;
-      e.RetinaImagePath = t, t.confirmed_paths = [], t.prototype.is_external = function() {
-        return !!this.path.match(/^https?\:/i) && !this.path.match("//" + document.domain)
-      }, t.prototype.check_2x_variant = function(e) {
-        var n, r = this;
-        if (this.is_external()) return e(!1);
-        if (this.at_2x_path in t.confirmed_paths) return e(!0);
-        n = new XMLHttpRequest, n.open("HEAD", this.at_2x_path), n.onreadystatechange = function() {
-          return n.readyState != 4 ? e(!1) : n.status >= 200 && n.status <= 399 ? (t.confirmed_paths.push(r.at_2x_path), e(!0)) : e(!1)
-        }, n.send()
-      }, e.RetinaImage = n, n.prototype.swap = function(e) {
-        function n() {
-          t.el.complete ? (t.el.setAttribute("width", t.el.offsetWidth), t.el.setAttribute("height", t.el.offsetHeight), t.el.setAttribute("src", e)) : setTimeout(n, 5)
-        }
-        typeof e == "undefined" && (e = this.path.at_2x_path);
-        var t = this;
-        n()
-      }, e.devicePixelRatio > 1 && (window.onload = function() {
-        var e = document.getElementsByTagName("img"),
-          t = [],
-          r, i;
-        for (r = 0; r < e.length; r++) i = e[r], t.push(new n(i))
-      })
-    })();
-  </script>
- ADS -->
 </head>
 
-<body>
-  <script>
-    function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-        if (vars[key]) {
-          if (vars[key] instanceof Array) {
-            vars[key].push(value);
-          } else {
-            vars[key] = [vars[key], value];
-          }
-        } else {
-          vars[key] = value;
-        }
-      });
-      return vars;
-    }
 
+<body class="container-fluid">
+
+  <div class="row">
+    <div class="span6 " style="float: none; margin: 0 auto;">
+      <div class="ielko_vid_container"></div>
+    </div>
+  </div>
+
+
+  <script>
     $(document).ready(function() {
       var play = getUrlVars()["play"];
       if (play) {
-        if (play.indexOf('m3u8') > -1) {
-          console.log('m3u8');
+        if (play.includes('m3u8') && play.includes('dvr') == false) {
           playmedia('m3u8', play)
+        } else if (play.includes('m3u8') && play.includes('dvr')) {
+          playmedia('dvr', play)
+        } else if (play.indexOf('mpd') > -1) {
+          playmedia('mpd', play)
         } else if (play.indexOf('rtmp') > -1) {
-          console.log('rtmp');
           playmedia('rtmp', play)
+        } else if (play.indexOf('mp4') > -1) {
+          playmedia('mp4', play)
         } else if (play.indexOf('youtube') > -1) {
-          console.log('youtube');
           playmedia('youtube', play)
         } else if (play.indexOf('livestream.com') > -1) {
-          console.log('livestream.com');
           append_livestream(play);
         } else if (play.indexOf('dailymotion') > -1) {
-          console.log('dailymotion');
-          append_dailymotion(play);
+          playmedia('dailymotion', play)
         } else if (play.indexOf('vimeo') > -1) {
-          console.log('vimeo');
-          append_vimeo(play);
+          playmedia('vimeo', play)
         }
       }
       var poster = getUrlVars()["poster"];
       var title = getUrlVars()["channel"];
+      var width = getUrlVars()["width"];
+      var height = getUrlVars()["height"];
 
-
-
-      function append_dailymotion(play) {
-        var dailymotionID = (m = play.match(new RegExp("\/video\/([^_?#]+).*?"))) ? m[1] : void 0;
-        $(".upgvid").empty().append(
-          '<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="http://www.dailymotion.com/embed/video/' +
-          dailymotionID + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
-      }
 
       function append_livestream(play) {
         var livestreamID = play.substr(play.lastIndexOf('/') + 1);
@@ -135,16 +75,80 @@
           livestreamID + '?autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
       }
 
-      function append_vimeo(play) {
-        var vimeoID = play.substr(play.lastIndexOf('/') + 1);
-        $(".upgvid").empty().append(
-          '<div id="videoHolder" style="background-image:url();" class="flowplayer-video videoHolder-322 videoHolder fullscreen-bg playful no-background"><div class="embed-container"><iframe src="http://player.vimeo.com/video/' +
-          vimeoID + '?autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>')
+
+
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+          if (vars[key]) {
+            if (vars[key] instanceof Array) {
+              vars[key].push(value);
+            } else {
+              vars[key] = [vars[key], value];
+            }
+          } else {
+            vars[key] = value;
+          }
+        });
+        return vars;
       }
+
+
+      function playmedia(type, url) {
+        switch (type) {
+          case 'm3u8':
+            thetype = 'application/x-mpegurl';
+            techordernode = '';
+            break;
+          case 'dvr':
+            thetype = 'application/x-mpegurl';
+            techordernode = '';
+            break;
+          case 'mpd':
+            thetype = 'application/dash+xml';
+            techordernode = '';
+            extra = 'controls';
+            break;
+          case 'mp4':
+            thetype = 'video/mp4';
+            techordernode = '';
+            break;
+          case 'youtube':
+            thetype = 'video/youtube';
+            techordernode = '"techOrder": ["youtube"],';
+            break;
+          case 'dailymotion':
+            thetype = 'video/dailymotion';
+            techordernode = '"techOrder": ["dailymotion"],';
+            break;
+          case 'vimeo':
+            thetype = 'video/vimeo';
+            techordernode = '"techOrder": ["vimeo"],';
+            break;
+          case 'rtmp':
+            thetype = 'application/x-mpegurl';
+            techordernode = '';
+            break;
+        }
+
+        width = (typeof width === 'undefined') ? '720' : x;
+        height = (typeof height === 'undefined') ? '576' : x;
+        poster = (typeof poster === 'undefined') ? 'noimage.jpg' : x;
+        $(".ielko_vid_container").empty().append(
+          '<video id="ielko-video" class="video-js vjs-default-skin"  width="' + width + '" height="' + height + '" controls poster="' + poster + '" ><source src="' + url +
+          '" type="' + thetype + '" data-setup="{ "width": auto, "height": auto }"></video>');
+        videojs("ielko-video").ready(function() {
+          var myPlayer = this;
+          if (type == 'dvr') {
+            myPlayer.dvrseekbar();
+          } else {}
+          myPlayer.play();
+        });
+
+
+      }
+
 
     });
   </script>
-  <div class="upgvid"></div>
 </body>
-
-</html>
