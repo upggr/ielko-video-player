@@ -48,6 +48,16 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="span6 " style="float: none; margin: 0 auto;">
+      <div class="not">
+        <a href="http://domain-player.upg.gr/">demo</a>  -  <a href="https://github.com/upggr/ielko-video-player">github</a>
+      </div>
+    </div>
+  </div>
+
+
  <script>
       $(document).ready(function() {
         $('.alink').click(function()
