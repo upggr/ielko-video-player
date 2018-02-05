@@ -49,6 +49,9 @@
         } else if (play.indexOf('mpd') > -1) {
           playmedia('mpd', play)
         } else if (play.indexOf('ws:') > -1) {
+          $.getScript("js/sldp-v2.8.3.min.js", function() {
+            console.log('sldp plugin loaded');
+          });
           playmedia_sldp('ws', play)
         } else if (play.indexOf('rtmp') > -1) {
           playmedia('rtmp', play)
@@ -96,10 +99,6 @@
       }
 
       function playmedia_sldp(type, url) {
-        $.getScript("js/sldp-v2.8.3.min.js", function() {
-          console.log('sldp plugin loaded');
-        });
-
         width = (typeof width === 'undefined') ? '720' : x;
         height = (typeof height === 'undefined') ? '576' : x;
         var sldpPlayer;
