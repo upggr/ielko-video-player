@@ -97,10 +97,6 @@
       }
 
       function playmedia_sldp(type, url) {
-        $.getScript("js/sldp-v2.8.3.min.js", function() {
-          console.log('sldp plugin loaded');
-        });
-
         width = (typeof width === 'undefined') ? '720' : x;
         height = (typeof height === 'undefined') ? '576' : x;
         var sldpPlayer;
