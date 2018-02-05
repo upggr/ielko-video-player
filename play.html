@@ -102,16 +102,14 @@
         height = (typeof height === 'undefined') ? '576' : x;
         var sldpPlayer;
 
-        function initPlayer() {
-          sldpPlayer = SLDP.init({
-            container: 'ielko_vid_container',
-            stream_url: "ws://37.48.118.105:8081/ionian/live",
-            height: height,
-            width: width,
-            autoplay: true
-          });
+        sldpPlayer = SLDP.init({
+          container: 'ielko_vid_container',
+          stream_url: "ws://37.48.118.105:8081/ionian/live",
+          height: height,
+          width: width,
+          autoplay: true
+        });
 
-        };
       }
 
       function playmedia(type, url) {
