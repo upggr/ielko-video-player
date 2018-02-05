@@ -26,9 +26,9 @@
     <div class="span6 " style="float: none; margin: 0 auto;">
       <a class="alink" href="play.html?play=http://www.w3schools.com/html/mov_bbb.mp4" target="iframe1">play mp4 file</a> -
       <a class="alink"  href="play.html?play=http://stream.ioniantv.gr:8081/ionian/live/playlist.m3u8" target="iframe1">play m3u8</a> -
-      <a class="alink"  href="play.html?play=<?php echo wmsauth('password666','20','http://stream.ioniantv.gr:8081/ionian/live/playlist.m3u8');?>" target="iframe1">play m3u8 (domain lock)</a> -
+      <a class="alink"  href="play.html?play=<?php echo wmsauth('password666','20','http://stream.ioniantv.gr:8081/ionian_locked/live/playlist.m3u8');?>" target="iframe1">play m3u8 (domain lock)</a> -
       <a class="alink"  href="play.html?play=http://stream.ioniantv.gr:8081/ionian/live/playlist_dvr.m3u8" target="iframe1">play m3u8 dvr</a> -
-      <a class="alink"  href="play.html?play=<?php echo wmsauth('password666','20','http://stream.ioniantv.gr:8081/ionian/live/playlist_dvr.m3u8');?>" target="iframe1">play m3u8 dvr (domain lock)</a> -
+      <a class="alink"  href="play.html?play=<?php echo wmsauth('password666','20','http://stream.ioniantv.gr:8081/ionian_locked/live/playlist_dvr.m3u8');?>" target="iframe1">play m3u8 dvr (domain lock)</a> -
       <a class="alink"  href="play.html?play=http://stream.ioniantv.gr:8081/ionian/live/manifest.mpd" target="iframe1">play mpd</a> -
       <a class="alink"  href="play.html?play=https://www.youtube.com/watch?v=fdoACP5FKJA" target="iframe1">play youtube</a> -
       <a class="alink"  href="play.html?play=https://vimeo.com/45480883" target="iframe1">play vimeo</a> -
