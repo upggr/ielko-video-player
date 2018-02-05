@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <style>
     body {
       background-color: #000000;
@@ -30,7 +30,7 @@
       <a class="alink"  href="play.html?play=<?php echo wmsauth('password666','20','http://stream.ioniantv.gr:8081/ionian_locked/live/playlist_dvr.m3u8');?>" target="iframe1">play m3u8 dvr (domain lock)</a> -
       <a class="alink"  href="play.html?play=http://stream.ioniantv.gr:8081/ionian/live/manifest.mpd" target="iframe1">play mpd</a> -
       <a class="alink"  href="play.html?play=ws://stream.ioniantv.gr:8081/ionian/live" target="iframe1">play SLDP</a> -
-      <a class="alink"  href="play.html?play=rtmp://stream.ioniantv:1935/ionian/live" target="iframe1">play RTMP</a> -
+      <a class="alink"  href="play.html?play=rtmp://37.48.118.105:1935/ionian/live" target="iframe1">play RTMP</a> -
       <a class="alink"  href="play.html?play=https://www.youtube.com/watch?v=fdoACP5FKJA" target="iframe1">play youtube</a> -
       <a class="alink"  href="play.html?play=https://vimeo.com/45480883" target="iframe1">play vimeo</a> -
       <a class="alink"  href="play.html?play=http://www.dailymotion.com/video/x6e3bvm" target="iframe1">play dailymotion</a> -
