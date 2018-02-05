@@ -16,6 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.6.5/dash.all.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.4.1/Youtube.min.js"></script>
+  <script src='js/sldp-v2.8.3.min.js' type='text/javascript'></script>
   <script src="js/videojs-dailymotion.js"></script>
   <script src="js/videojs-dvrseekbar.min.js"></script>
   <script src="js/videojs-background.min.js"></script>
@@ -33,7 +34,7 @@
 
   <div class="row">
     <div class="span6 " style="float: none; margin: 0 auto;">
-      <div class="ielko_vid_container"></div>
+      <div class="ielko_vid_container" id="ielko_vid_container"></div>
     </div>
   </div>
 
@@ -49,7 +50,7 @@
         } else if (play.indexOf('mpd') > -1) {
           playmedia('mpd', play)
         } else if (play.indexOf('ws:') > -1) {
-          playmedia('ws', play)
+          playmedia_sldp('ws', play)
         } else if (play.indexOf('rtmp') > -1) {
           playmedia('rtmp', play)
         } else if (play.indexOf('mp4') > -1) {
@@ -95,6 +96,22 @@
         return vars;
       }
 
+      function playmedia_sldp(type, url) {
+        width = (typeof width === 'undefined') ? '720' : x;
+        height = (typeof height === 'undefined') ? '576' : x;
+        var sldpPlayer;
+
+        function initPlayer() {
+          sldpPlayer = SLDP.init({
+            container: 'ielko_vid_container',
+            stream_url: "ws://37.48.118.105:8081/ionian/live",
+            height: height,
+            width: width,
+            autoplay: true
+          });
+
+        };
+      }
 
       function playmedia(type, url) {
         switch (type) {
